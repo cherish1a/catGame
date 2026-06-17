@@ -29,7 +29,8 @@ body{
     position:absolute;
 
     pointer-events:none;
-    font-weight:bold;
+
+    font-weight:normal;
 
     animation:pop 1s forwards;
 }
@@ -38,11 +39,19 @@ body{
 
     0%{
         opacity:1;
-        transform:translateY(0);
+
+        transform:
+            translateY(0)
+            rotate(var(--start-rot))
+            scale(var(--flip-x), var(--flip-y));
     }
 
     100%{
         opacity:0;
-        transform:translateY(-60px);
+
+        transform:
+            translateY(-60px)
+            rotate(var(--end-rot))
+            scale(var(--flip-x), var(--flip-y));
     }
 }

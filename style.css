@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+    background:#f7f7f7;
+
+    font-family:sans-serif;
+}
+
+#menu{
+    margin-bottom:20px;
+}
+
+#cat{
+    max-width:400px;
+    max-height:400px;
+    cursor:pointer;
+    user-select:none;
+}
+
+.no{
+    position:absolute;
+
+    pointer-events:none;
+    font-weight:bold;
+
+    animation:pop 1s forwards;
+}
+
+@keyframes pop{
+
+    0%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-60px);
+    }
+}

@@ -120,13 +120,17 @@ function spawnNo(x,y){
         getNoColor(dominantColor);
 
     const size =
-        20 + Math.random()*80;
+        15 + Math.random()*100;
 
     no.style.fontSize =
         size + "px";
 
-    const rotate =
+    const startRot =
         Math.random()*360;
+
+    const endRot =
+        startRot +
+        (Math.random()*720 - 360);
 
     const flipX =
         Math.random()<0.5 ? -1 : 1;
@@ -134,9 +138,25 @@ function spawnNo(x,y){
     const flipY =
         Math.random()<0.5 ? -1 : 1;
 
-    no.style.transform =
-        `rotate(${rotate}deg)
-         scale(${flipX},${flipY})`;
+    no.style.setProperty(
+        "--start-rot",
+        `${startRot}deg`
+    );
+
+    no.style.setProperty(
+        "--end-rot",
+        `${endRot}deg`
+    );
+
+    no.style.setProperty(
+        "--flip-x",
+        flipX
+    );
+
+    no.style.setProperty(
+        "--flip-y",
+        flipY
+    );
 
     document.body.appendChild(no);
 
